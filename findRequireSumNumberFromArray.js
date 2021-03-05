@@ -1,12 +1,12 @@
 //  Find if the Sum 8 present or not
 
-const sum = 8;
+const sum = 9;
 
 // e.g 1
 const array1 = [1,2,3,5,4,9];
 
 // e.g 2
-const array2 = [1,2,4,4];
+const array2 = [2,7,11,15];
 
 // O(n^2) method
 
@@ -23,12 +23,14 @@ const array2 = [1,2,4,4];
 
 var findPair = {};
 
-array1.forEach( x => {
-    if (findPair[x]){
+array2.forEach( (x, index) => {
+    if (findPair[sum-x] !== undefined){
         console.log('true');
+        console.log(index);
+        console.log(findPair[sum-x]);
     }
     else {
-        const pair = 8 - x;
-        findPair[pair] = true;
+        const pair = x;
+        findPair[pair] = index;
     }
 })
